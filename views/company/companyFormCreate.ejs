@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+
+<form action="./save" class="col-md-4">
+    <div class="form-group">
+        <label for="street">Name:</label>
+        <input type="text" name="name" id="name" value="" class="form-control" />
+    </div>
+    <label for="address_id">Address:</label>
+    <select id="address_id" name="address_id" class="form-control">
+        <% address.forEach(function(entry) { %>
+        <% var address = entry.street + " " + entry.city + ", " + entry.state_abbr + " " + entry.zip; %>
+        <option value="<%= entry.address_id %>"><%= address %></option>
+        <% }); %>
+    </select>
+
+    <br />
+    <input type="submit" />
+</form>
+
+
+<!--<form action="/company/save/">-->
+
+    <!--<label for="companyName">Company Name</label> <input type="text" id="companyName" name="companyName" /><br />-->
+    <!--<label for="street">Street</label> <input type="text" id="street" name="street" /><br />-->
+    <!--<label for="city">City</label> <input type="text" id="city" name="city" /><br />-->
+    <!--<label for="state">State</label> <input type="text" id="state" name="state" /><br />-->
+    <!--<label for="zip">Zip</label> <input type="text" id="zip" name="zip" /><br />-->
+
+    <!--<input type="submit" />-->
+<!--</form>-->
+
+<% include ../partials/footer %>

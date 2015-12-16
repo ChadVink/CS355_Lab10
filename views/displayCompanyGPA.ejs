@@ -1,0 +1,24 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr>
+            <th>Company Name</th>
+            <th>Number of Students</th>
+            <th>Min GPA</th>
+            <th>Max GPA</th>
+            <th>Avg GPA</th>
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].companyName %></td>
+            <td><%= rs[i].numStudents %></td>
+            <td><%= rs[i].minGPA %></td>
+            <td><%= rs[i].maxGPA %></td>
+            <td><%= rs[i].avgGPA %></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No accounts are entered into the Account database table.
+    <% } %>
+</div>

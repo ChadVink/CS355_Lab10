@@ -1,0 +1,18 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Name</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/education/?school_id=<%= rs[i].schoolName %>"> <%= rs[i].schoolName %> </a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No schools are entered into the education database table.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/school/create">Create New Account</a>
+</div>
